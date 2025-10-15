@@ -20,13 +20,13 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci 
 
       - name: Run ESLint
         run: npx eslint . --fix
 
       - name: Run Tests (Karma + Jasmine)
-        run: npx karma start --single-run
+        run: npm test
 
       - name: Run Snyk (Security Scan)
         env:
