@@ -33,6 +33,9 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: npx snyk test || echo "Snyk encontro vulnerabilidades, continuando flujo."
 
+      - name: Install Sonar Scanner
+        run: npm install -g sonar-scanner
+
       - name: Run Sonar Analysis
         env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
