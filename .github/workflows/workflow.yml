@@ -23,7 +23,7 @@ jobs:
         run: npm ci 
 
       - name: Run Tests (Karma + Jasmine)
-        run: npm test
+        run: npx karma start --single-run
 
       - name: Run ESLint
         run: npx eslint . --fix
