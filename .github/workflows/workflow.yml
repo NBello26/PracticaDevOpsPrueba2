@@ -38,8 +38,8 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
             sonar-scanner \
-              -Dsonar.projectKey=decimas \
-              -Dsonar.organization=organizaciontesting \
+              -Dsonar.projectKey=organizaciontesting \
+              -Dsonar.organization=OrganizacionTesting \
               -Dsonar.sources=./src \
               -Dsonar.host.url=https://sonarcloud.io \
               -Dsonar.login=${SONAR_TOKEN} \
