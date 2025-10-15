@@ -40,10 +40,10 @@ jobs:
           npm install -g sonar-scanner || echo "Snyk encontro vulnerabilidades, continuando flujo."
           sonar-scanner \
             -Dsonar.projectKey=decimas \
-            -Dsonar.organization=tu_organizacion \
             -Dsonar.sources=./src \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=${SONAR_TOKEN}
+            -Dsonar.host.url=http://localhost:9000 \
+            -Dsonar.login=${SONAR_TOKEN} \
+            -Dsonar.branch.name=main
 
   docker:
     needs: build-and-test
