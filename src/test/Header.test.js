@@ -8,8 +8,11 @@ describe("<Header />", () => {
 	it("muestra la cantidad correcta de productos en el carrito", () => {
 		// Mockeamos el contexto del carrito con cantidad personalizada
 		const mockContext = {
-			cart: [{ id: 1, name: "Producto A", quantity: 2 }],
-			total: 2,
+			cart: [
+				{ id: 1, quantity: 2 },
+				{ id: 2, quantity: 3 }
+			],
+			total: 5,
 			addToCart: jasmine.createSpy("addToCart"),
 			removeFromCart: jasmine.createSpy("removeFromCart"),
 			clearCart: jasmine.createSpy("clearCart"),
