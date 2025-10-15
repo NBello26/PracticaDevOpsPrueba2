@@ -55,11 +55,12 @@ jobs:
 
       - name: Build and Push Docker image
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-          docker build -t $DOCKER_USERNAME/decimas:latest .
-          docker tag $DOCKER_USERNAME/decimas:latest $DOCKER_USERNAME/decimas:${{ github.sha }}
-          docker push $DOCKER_USERNAME/decimas:latest
-          docker push $DOCKER_USERNAME/decimas:${{ github.sha }}
+          sonar-scanner \
+            -Dsonar.projectKey=organizaciontesting \
+            -Dsonar.organization=OrganizacionTesting \
+            -Dsonar.sources=./src \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${SONAR_TOKEN} \
+            -Dsonar.branch.name=main
