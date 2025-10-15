@@ -41,8 +41,8 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
             sonar-scanner \
-              -Dsonar.projectKey=decimas \
-              -Dsonar.organization=decimas123 \
+              -Dsonar.projectKey=nbello26 \
+              -Dsonar.organization=NBello26 \
               -Dsonar.sources=./src \
               -Dsonar.host.url=https://sonarcloud.io \
               -Dsonar.login=${SONAR_TOKEN} \
@@ -65,4 +65,3 @@ jobs:
           docker tag $DOCKER_USERNAME/decimas:latest $DOCKER_USERNAME/decimas:${{ github.sha }}
           docker push $DOCKER_USERNAME/decimas:latest
           docker push $DOCKER_USERNAME/decimas:${{ github.sha }}
-          
