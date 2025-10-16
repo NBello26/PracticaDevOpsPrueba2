@@ -41,8 +41,8 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
             sonar-scanner \
-              -Dsonar.projectKey=nbello26 \
-              -Dsonar.organization=NBello26 \
+              -Dsonar.projectKey=NBello26_PracticaDevOpsPrueba2 \
+              -Dsonar.organization=nbello26 \
               -Dsonar.sources=./src \
               -Dsonar.host.url=https://sonarcloud.io \
               -Dsonar.login=${SONAR_TOKEN} \
