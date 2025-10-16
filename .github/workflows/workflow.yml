@@ -65,3 +65,4 @@ jobs:
           docker tag $DOCKER_USERNAME/decimas:latest $DOCKER_USERNAME/decimas:${{ github.sha }}
           docker push $DOCKER_USERNAME/decimas:latest
           docker push $DOCKER_USERNAME/decimas:${{ github.sha }}
+          
